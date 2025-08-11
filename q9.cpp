@@ -11,8 +11,12 @@ public:
     int movingAll0AtEnd(vector<int> &a, int n)
     {
         int i, j;
+        int last = n;
         for (i = 0; i < n; i++)
         {
+            if (a[i] == 0 && a[last - 1])
+            {
+            }
         }
     }
 };

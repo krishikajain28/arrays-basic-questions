@@ -38,15 +38,11 @@ public:
         // k = k % n;
 
         // for(int j = 0; j < k; j++){               // the extra for loop that runs k times
-
         //     int tempo = a[0];
-
         //     for(int i = 0; i < n - 1; i++ ){      // the prev logiv of rotating
         //     a[i] = a[i + 1];
         //     }
-
         //     a[n - 1] = tempo;
-
         // }
 
         // but bruteforce consumes a lot of time its lit O(k*n) if k is 1000???
