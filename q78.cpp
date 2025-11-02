@@ -86,7 +86,7 @@ public:
         // Step 1: Reverse first k elements reverse( vec_name.begin(), vec_name.begin() + k )
         reverse(a.begin(), a.begin() + k);
 
-        // Step 2: Reverse rest of the elements
+                // Step 2: Reverse rest of the elements
         reverse(a.begin() + k, a.end());
 
         // Step 3: Reverse the whole array
