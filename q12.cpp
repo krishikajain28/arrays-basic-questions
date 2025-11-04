@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// q12. intersection of the two arrays
+// q12. Intersection of the two arrays
 
 vector<int> intersectionB(vector<int> &a1, vector<int> &a2)
 { // bruteforcesolution:
