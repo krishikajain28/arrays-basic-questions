@@ -57,6 +57,21 @@ int missingNumberBe(vector<int> &a, int n)
     // sc: O(n+1) so basically O(n)
 }
 
+int missingNumberO(vector<int> &a, int n)
+{
+    // has 2 optimal solutions
+    // 1. sum
+    // 2. xor
+
+    // 1. sum -
+    // as we know,
+    // the formula to sum of first n natural numbers: n(n+1)/2
+
+    // so if n = 5
+    // 5(5+1)/2 = 15
+    // therefore, summation of first 5 natrual numbers: 15
+}
+
 int main()
 {
 
