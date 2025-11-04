@@ -8,7 +8,7 @@ vector<int> intersectionB(vector<int> &a1, vector<int> &a2)
     vector<int> inte = {};
 
     // bruteforce: for bruteforce we take iterator in a1 and check in  a2 if it has the corresponding element or not
-    // if it does we check ifits used w another element or not by making one more array visited array and keep the count in it
+    // if it does we check if its used w another element or not by making one more array visited array and keep the count in it
     // the moment u take element visited array corresponding index increases by 1 and thats how we keep track of the elements  that are alrweady been visited
 
     int n1 = a1.size();
