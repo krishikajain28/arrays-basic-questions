@@ -34,6 +34,10 @@ vector<int> intersectionB(vector<int> &a1, vector<int> &a2)
     }
 
     return inte;
+
+    // Time complexity
+    // Worst-case: O(n1 × n2) (brute force nested loop)
+    // But due to if (a2[j] > a1[i]) break;, it performs much faster on sorted arrays — roughly O(n1 + n2) in best/average cases.
 }
 
 vector<int> intersectionO(vector<int> &a1, vector<int> &a2)
@@ -81,8 +85,3 @@ int main()
         cout << it << " ";
     }
 }
-// ⚙️ Time complexity
-
-// Worst-case: O(n1 × n2) (brute force nested loop)
-
-// But due to if (a2[j] > a1[i]) break;, it performs much faster on sorted arrays — roughly O(n1 + n2) in best/average cases.
