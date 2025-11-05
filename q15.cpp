@@ -7,7 +7,33 @@ using namespace std;
 // the other numbers, other than 2 appears twice
 // but number 2 only appears once
 
-int onceB(vector<int> &a) // bruteforce solution , similar to that missing number in an array qsn
+// there are 2 bruteforce solution to this
+// b1 and b2
+
+int onceB1(vector<int> &a)
+{
+    int n = a.size();
+
+    for (int i = 0; i < n; i++)
+    {
+        int num = a[i];
+        int c = 0;
+        for (int j = 0; j < n; j++)
+        {
+            if (a[j] == num)
+            {
+                c++;
+            }
+        }
+        if (c == 1)
+        {
+            return a[i];
+        }
+    }
+    return -1;
+}
+
+int onceB2(vector<int> &a) // bruteforce 2 solution , similar to that missing number in an array qsn
 
 {
     int n = a.size();
@@ -35,14 +61,23 @@ int onceB(vector<int> &a) // bruteforce solution , similar to that missing numbe
     // sc: O(1)
 }
 
-int
+int onceBe(vector<int> &a)
+{
+    int n = a.size();
+    return m;
+}
 
-    int
-    main()
+int onceO(vector<int> &a)
+{
+    int m;
+    return m;
+}
+
+int main()
 {
     vector<int> a = {1, 1, 2, 3, 3, 4, 4, 5, 5};
 
-    int m = once(a);
+    int m = onceB1(a);
 
     cout << "The numb appearing once in the array is: " << m;
 }
