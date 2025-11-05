@@ -7,7 +7,7 @@ using namespace std;
 // the other numbers, other than 2 appears twice
 // but number 2 only appears once
 
-int once(vector<int> &a)
+int onceB(vector<int> &a) // bruteforce solution , similar to that missing number in an array qsn
 
 {
     int n = a.size();
@@ -35,7 +35,10 @@ int once(vector<int> &a)
     // sc: O(1)
 }
 
-int main()
+int
+
+    int
+    main()
 {
     vector<int> a = {1, 1, 2, 3, 3, 4, 4, 5, 5};
 
