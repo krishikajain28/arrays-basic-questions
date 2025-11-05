@@ -123,6 +123,27 @@ int missingNumberO2(vector<int> &a, int n)
         xor_n = xor_n ^ i;
 
     return xor_ae ^ xor_n;
+
+    // tc: O(2n)
+    // sc: O(1)
+    // then we say how is this better than sumoptimal solution
+    // so we use another XOR one
+    // that is in the next function
+}
+
+int missingNumberO21(vector<int> &a, int n)
+{
+
+    // here we try todo the work for both for loops in one
+    int xor_ae = 0, xor_n = 0;
+
+    for (int i = 0; i < n - 1; i++)
+    {
+        xor_ae = xor_ae ^ a[i];
+        xor_n = xor_n ^ (i + 1);
+    }
+
+    return xor_ae ^ xor_n ^ n;
 }
 
 int main()
@@ -131,7 +152,16 @@ int main()
     vector<int> a = {1, 2, 4, 5};
     int n = 5;
 
-    int m = missingNumberO2(a, n); // change acc wht u want, B(bruteforce), Be(better --> hashing), O1(sum), O2(xor)
+    int m = missingNumberO21(a, n); // change acc wht u want, B(bruteforce), Be(better --> hashing), O1(sum), O2(xor)
 
     cout << "Missing num: " << m;
 }
+
+// conclusion table:
+// | Method             | Name                            | Time     | Space    | Idea                                              |
+// | ------------------ | ------------------------------- | -------- | -------- | ------------------------------------------------- |
+// | `missingNumberB`   | Brute Force                     | O(n²)    | O(1)     | For every number from 1–n, linearly search array  |
+// | `missingNumberBe`  | Better (Hashing)                | O(n)     | O(n)     | Create hash array to mark presence                |
+// | `missingNumberO1`  | Optimal 1 (Sum Formula)         | O(n)     | O(1)     | Compare total expected sum vs actual sum          |
+// | `missingNumberO2`  | Optimal 2 (XOR 2 loops)         | O(2n)    | O(1)     | XOR all 1–n and XOR all array elements separately |
+// | `missingNumberO21` | Most Optimal (XOR 1 loop)       | O(n)     | O(1)     | Do both XORs together in single loop              |
