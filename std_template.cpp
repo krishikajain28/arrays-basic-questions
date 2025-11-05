@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// customize this according to ur needs
+// customize this template according to ur needs
 // q
 
 int change_this_nameB(vector<int> &a)

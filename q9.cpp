@@ -45,7 +45,7 @@ public:
         }
         return (t);
 
-        // therefor
+        // therefore
         // tc = 2n
         // sc = n
         // no better solution so we move to the optimal one

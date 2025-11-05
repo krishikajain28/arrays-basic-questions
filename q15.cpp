@@ -10,7 +10,7 @@ using namespace std;
 // there are 2 bruteforce solution to this
 // b1 and b2
 
-int onceB1(vector<int> &a)
+int findNumbersOnceB1(vector<int> &a)
 {
     int n = a.size();
 
@@ -33,8 +33,7 @@ int onceB1(vector<int> &a)
     return -1;
 }
 
-int onceB2(vector<int> &a) // bruteforce 2 solution , similar to that missing number in an array qsn
-
+int findNumbersOnceB2(vector<int> &a) // bruteforce 2 solution , similar to that missing number in an array qsn
 {
     int n = a.size();
 
@@ -61,13 +60,13 @@ int onceB2(vector<int> &a) // bruteforce 2 solution , similar to that missing nu
     // sc: O(1)
 }
 
-int onceBe(vector<int> &a)
+int findNumbersOnceBe(vector<int> &a)
 {
-    int n = a.size();
+    int m;
     return m;
 }
 
-int onceO(vector<int> &a)
+int findNumbersOnceO(vector<int> &a)
 {
     int m;
     return m;
@@ -77,7 +76,7 @@ int main()
 {
     vector<int> a = {1, 1, 2, 3, 3, 4, 4, 5, 5};
 
-    int m = onceB1(a);
+    int m = findNumbersOnceB1(a);
 
     cout << "The numb appearing once in the array is: " << m;
 }
