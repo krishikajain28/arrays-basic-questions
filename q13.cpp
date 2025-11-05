@@ -3,7 +3,7 @@ using namespace std;
 
 // q13. find the missing number in the array
 // problem:
-// you will be given an array of size n-1 containing distinct elements
+// you will be given an n and an array of size n-1 having elements with value ranging from 1-n (distinct elements)
 // ranging from 1 to n
 // one number will be missing from the range 1 to n
 // example:
@@ -29,20 +29,18 @@ int missingNumberB(vector<int> &a, int n)
             return i;
         }
     }
-    return -1; // fallback, shouldnt happen
+    return -1; // fallback, shouldn't happen
 }
 
 int missingNumberBe(vector<int> &a, int n)
 {
     // you use hashing here
 
-    vector<int> ha(n + 1);
+    vector<int> ha(n + 1, 0);
     for (int i = 0; i < n - 1; i++)
     {
-        if (a[i] < n)
-        {
-            ha[a[i]] = 1;
-        }
+
+        ha[a[i]] = 1;
     }
 
     for (int i = 1; i <= n; i++)
@@ -57,7 +55,7 @@ int missingNumberBe(vector<int> &a, int n)
     // sc: O(n+1) so basically O(n)
 }
 
-int missingNumberO(vector<int> &a, int n)
+int missingNumberO1(vector<int> &a, int n)
 {
     // has 2 optimal solutions
     // 1. sum
@@ -70,6 +68,61 @@ int missingNumberO(vector<int> &a, int n)
     // so if n = 5
     // 5(5+1)/2 = 15
     // therefore, summation of first 5 natrual numbers: 15
+
+    // so when we run through the loop
+    // and add up all the elements
+    // now
+    // if array: {1,2,4,5}
+    // n = 5
+    // summation of first 5 natural numbers: 15
+    // summation of array elements : 12
+    // therefore 15 - 12 = 3 aka the missing element
+
+    // this is how we do it!!!!!!!!
+
+    int s = n * (n + 1) / 2;
+
+    int s_ae = 0;
+    for (int i = 0; i < n - 1; i++)
+    {
+        s_ae += a[i];
+    }
+
+    return s - s_ae;
+
+    // tc: O(n)
+    // sc: O(1)
+}
+
+int missingNumberO2(vector<int> &a, int n)
+{
+    // the secondmethod for this is XOR method
+
+    // the XOR concept
+    // XOR symbol: ^
+    // XOR is basically eXclusive OR
+    // --> false if both bits same, true if both bits different
+    // 0 ^ 0 --> 0
+    // 0 ^ 1 --> 1
+    // 1 ^ 0 --> 1
+    // 1 ^ 1 --> 0
+
+    // therefore
+    // 2 ^ 2 --> 0
+    // 2 ^ 2 ^ 2 --> 0 ^ 2 --> 2
+
+    // this is the concept we use
+    // xor of 1-n
+
+    int xor_ae = 0, xor_n = 0;
+
+    for (int i = 0; i < n - 1; i++)
+        xor_ae = xor_ae ^ a[i];
+
+    for (int i = 1; i <= n; i++)
+        xor_n = xor_n ^ i;
+
+    return xor_ae ^ xor_n;
 }
 
 int main()
@@ -78,7 +131,7 @@ int main()
     vector<int> a = {1, 2, 4, 5};
     int n = 5;
 
-    int m = missingNumberBe(a, n);
+    int m = missingNumberO2(a, n); // change acc wht u want, B(bruteforce), Be(better --> hashing), O1(sum), O2(xor)
 
     cout << "Missing num: " << m;
 }
