@@ -16,11 +16,10 @@ int findNumbersOnceB1(vector<int> &a)
 
     for (int i = 0; i < n; i++)
     {
-        int num = a[i];
         int c = 0;
         for (int j = 0; j < n; j++)
         {
-            if (a[j] == num)
+            if (a[j] == a[i])
             {
                 c++;
             }
@@ -59,24 +58,62 @@ int findNumbersOnceB2(vector<int> &a) // bruteforce 2 solution , similar to that
     // tc: O(n^2)
     // sc: O(1)
 }
+// both b1 and b2 basically do the same job
+// the only difference is that
+// one counts how many times each number appears
+//  while the other skips duplicate (i & j) comparisons and hecks if another match exists
+// if it does, the flag turns true
+// if not it stays false
 
-int findNumbersOnceBe(vector<int> &a)
+int findNumbersOnceBe1(vector<int> &a)
 {
-    int m;
-    return m;
+
+    // hashing ofc
+    int n = a.size();
+
+    int maxi = 0;
+    for (int i = 0; i < n; i++) // so this loopends up taking O(n)
+    {
+        maxi = max(maxi, a[i]);
+    }
+
+    vector<int> h(maxi + 1, 0);
+
+    for (int i = 0; i < n; i++) // and this too take O(n)
+    {
+        h[a[i]]++;
+    }
+
+    for (int i = 0; i < n; i++) // and this takes O(n) again
+    {
+        if (h[a[i]] == 1)
+        {
+            return a[i];
+        }
+    }
+    return -1;
+
+    // so the total tc: O(3n)
+}
+
+int findNumbersOnceBe2(vector<int> &a)
+{
+    // this is the map one
+    // map is a data structure that stores data w key and value pairs
+
+    // so for this questn,
+    // map stores data
 }
 
 int findNumbersOnceO(vector<int> &a)
 {
-    int m;
-    return m;
 }
 
 int main()
 {
     vector<int> a = {1, 1, 2, 3, 3, 4, 4, 5, 5};
 
-    int m = findNumbersOnceB1(a);
+    int m = findNumbersOnceBe1(a);
 
     cout << "The numb appearing once in the array is: " << m;
 }
