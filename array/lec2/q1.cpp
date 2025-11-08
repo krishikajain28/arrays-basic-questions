@@ -6,7 +6,7 @@ using namespace std;
 // q1: 2sum problem
 
 // now this question has 2 varieties
-// 1 is that
+// 1 is that u need to return  the index of the elements and the  other says u need to return the two numbers
 
 int 2sumB(vector<int> &a)
 {
