@@ -29,8 +29,33 @@ int findMajorityBe(vector<int> &a)
 
     for (int i = 0; i < n; i++)
     {
+        umap[a[i]]++;
+    }
+
+    for (auto i : umap)
+    {
+        if (i.second > n / 2)
+        {
+            return i.first;
         }
+    }
+    return -1;
+
+    // How it works:
+    // You create a hashmap (unordered_map) to count occurrences of each number.
+    // You iterate through the map to check if any number occurs more than n/2 times.
+    // If yes, you return that number; otherwise, return -1.
+    // For your array {4, 5, 3, 5, 3, 5, 3, 5, 5, 5, 3}, the size n = 11.
+    // Majority element must appear more than 11/2 = 5 times.
+    // Number 5 appears 6 times → it is returned correctly.
+
+    // tc: O(2n)for unordered, O(n^2) if hashing collisions appear
+    // tc: O(n) + O(n logn) for ordered map
+
+    // sc: O(n)
 }
+
+// Moore voting algorithm for the optimal
 
 int findMajorityO(vector<int> &a)
 
@@ -40,9 +65,9 @@ int findMajorityO(vector<int> &a)
 
 int main()
 {
-    vector<int> a = {4, 5, 3, 5, 3, 5, 3, 5, 5, 5, 3};
+    vector<int> a = {5, 5, 5, 5, 7, 7, 7};
 
-    int m = findMajorityB(a);
+    int m = findMajorityBe(a);
 
     cout << "The ans : " << m;
 }
