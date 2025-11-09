@@ -18,10 +18,18 @@ int findMajorityB(vector<int> &a)
         if (c > n / 2)
             return a[i];
     }
+    return -1;
 }
-w2e int findMajorityBe(vector<int> &a)
+int findMajorityBe(vector<int> &a)
 {
+    // hashing and storing the counts of OBV
     int n = a.size();
+
+    unordered_map<int, int> umap;
+
+    for (int i = 0; i < n; i++)
+    {
+        }
 }
 
 int findMajorityO(vector<int> &a)
@@ -32,7 +40,7 @@ int findMajorityO(vector<int> &a)
 
 int main()
 {
-    vector<int> a = {1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1};
+    vector<int> a = {4, 5, 3, 5, 3, 5, 3, 5, 5, 5, 3};
 
     int m = findMajorityB(a);
 
