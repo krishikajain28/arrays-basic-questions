@@ -90,6 +90,8 @@ vector<int> sortArrayof0sand1sand2sO(vector<int> &a)
         }
     }
     return a;
+    // tc: O(n)
+    // sc: O(1)
 }
 
 int main()
