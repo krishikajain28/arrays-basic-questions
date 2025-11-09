@@ -20,6 +20,7 @@ int findMajorityB(vector<int> &a)
     }
     return -1;
 }
+
 int findMajorityBe(vector<int> &a)
 {
     // hashing and storing the counts of OBV
