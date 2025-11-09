@@ -70,7 +70,6 @@ int findMajorityO(vector<int> &a)
         if (cnt == 0)
         {
             el = a[i];
-            cnt = 1;
         }
         else if (a[i] == el)
         {
@@ -81,19 +80,10 @@ int findMajorityO(vector<int> &a)
             cnt--;
         }
     }
-    int cnt1 = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (a[i] == el)
-        {
-            cnt1++;
-        }
-    }
-    if (cnt1 > n / 2)
-    {
+    if (cnt > 0)
         return el;
-    }
-    return -1;
+    else
+        return -1;
 }
 
 int main()
