@@ -6,18 +6,18 @@ using namespace std;
 
 int change_this_nameB(vector<int> &a)
 {
-    int n = size.a();
+    int n = a.size();
 }
 
 int change_this_nameBe(vector<int> &a)
 {
-    int n = size.a();
+    int n = a.size();
 }
 
 int change_this_nameO(vector<int> &a)
 
 {
-    int n = size.a();
+    int n = a.size();
 }
 
 int main()
